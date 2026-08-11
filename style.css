@@ -1,0 +1,563 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   GALÁXIA
+========================= */
+
+.galaxy {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #32001f,
+            #090009 50%,
+            #000 100%
+        );
+}
+
+
+/* =========================
+   ESTRELAS
+========================= */
+
+#stars {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.title {
+    position: absolute;
+
+    top: 7%;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family: cursive;
+
+    font-size: clamp(
+        45px,
+        10vw,
+        90px
+    );
+
+    color: white;
+
+    z-index: 5;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 20px #ff1493,
+        0 0 40px #ff1493,
+        0 0 70px #ff1493;
+
+    animation: glow 2s infinite alternate;
+}
+
+
+@keyframes glow {
+
+    from {
+        text-shadow:
+            0 0 5px white,
+            0 0 20px #ff1493;
+    }
+
+    to {
+        text-shadow:
+            0 0 15px white,
+            0 0 40px #ff1493,
+            0 0 80px #ff1493;
+    }
+
+}
+
+
+/* =========================
+   CORAÇÃO
+========================= */
+
+.heart {
+    position: absolute;
+
+    top: 21%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: clamp(
+        100px,
+        22vw,
+        180px
+    );
+
+    color: #ff1493;
+
+    z-index: 6;
+
+    filter:
+        drop-shadow(0 0 5px white)
+        drop-shadow(0 0 15px #ff1493)
+        drop-shadow(0 0 35px #ff1493);
+
+    animation: heartbeat 1.2s infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            scale(1.12);
+    }
+
+}
+
+
+/* =========================
+   CENTRO DA GALÁXIA
+========================= */
+
+.galaxy-center {
+
+    position: absolute;
+
+    top: 45%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: min(90vw, 700px);
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #ff1493,
+            rgba(255,20,147,.3),
+            transparent 70%
+        );
+
+    box-shadow:
+        0 0 30px #ff1493,
+        0 0 80px rgba(255,20,147,.5);
+
+    z-index: 2;
+
+}
+
+
+/* =========================
+   ANÉIS
+========================= */
+
+.ring {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        2px solid
+        rgba(255,105,180,.6);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px #ff1493;
+
+}
+
+
+.ring1 {
+
+    width: 90%;
+    height: 30%;
+
+}
+
+
+.ring2 {
+
+    width: 70%;
+    height: 22%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(25deg);
+
+}
+
+
+.ring3 {
+
+    width: 55%;
+    height: 18%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-25deg);
+
+}
+
+
+/* =========================
+   BURACO NEGRO
+========================= */
+
+.black-hole {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 70px;
+    height: 70px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: black;
+
+    box-shadow:
+        0 0 15px #ff1493,
+        0 0 35px #ff1493;
+
+}
+
+
+/* =========================
+   MENSAGENS
+========================= */
+
+.messages {
+
+    position: absolute;
+
+    top: 63%;
+    left: 5%;
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 7;
+
+}
+
+
+.messages h2 {
+
+    font-size: clamp(
+        25px,
+        6vw,
+        45px
+    );
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 10px #ff1493;
+
+}
+
+
+.phrases {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+.phrases span {
+
+    color: #ffb6df;
+
+    font-size: clamp(
+        14px,
+        3.5vw,
+        21px
+    );
+
+    text-shadow:
+        0 0 10px #ff1493;
+
+    animation: float 3s ease-in-out infinite;
+
+}
+
+
+@keyframes float {
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+
+}
+
+
+.special-message {
+
+    margin-top: 20px;
+
+    color: #fff;
+
+    font-size: clamp(
+        14px,
+        4vw,
+        21px
+    );
+
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.love-button {
+
+    position: absolute;
+
+    bottom: 7%;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 20;
+
+    padding:
+        14px 28px;
+
+    border:
+        2px solid #ff69b4;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,20,147,.2);
+
+    color: white;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 0 15px #ff1493;
+
+}
+
+
+/* =========================
+   CORAÇÕES FLUTUANTES
+========================= */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    color: #ff1493;
+
+    font-size: 25px;
+
+    z-index: 30;
+
+    pointer-events: none;
+
+    animation:
+        rise 5s linear forwards;
+
+    filter:
+        drop-shadow(0 0 8px #ff1493);
+
+}
+
+
+@keyframes rise {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+
+    }
+
+    to {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================
+   TELA INICIAL
+========================= */
+
+.start-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    background: #000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    transition: opacity 1s;
+
+}
+
+
+.start-screen h1 {
+
+    color: #ff69b4;
+
+    font-size:
+        clamp(30px, 8vw, 60px);
+
+    text-shadow:
+        0 0 30px #ff1493;
+
+}
+
+
+.start-screen p {
+
+    width: 85%;
+
+    max-width: 500px;
+
+    margin: 25px 0;
+
+    color: #ffcce9;
+
+    font-size: 17px;
+
+}
+
+
+.start-screen button {
+
+    padding:
+        15px 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #ff1493;
+
+    color: white;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 0 25px #ff1493;
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .galaxy-center {
+
+        height: 240px;
+
+    }
+
+    .messages {
+
+        top: 62%;
+
+    }
+
+                  }
